@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boggle</title>
+</head>
+<body>
+    <h1>Boggle</h1>
+    <table>
+        {% for row in board %}
+        <!-- make rows -->
+        <tr>
+            {% for cell in row %}
+            <!-- make cells in rows  -->
+            <td>{{cell}}</td>
+             {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <form action="">
+        <label for="guess">Guess a word: </label>
+        <input id="guess" name="guess" type="text">
+        <button>Submit</button>
+    </form>
+    
+</body>
+</html>

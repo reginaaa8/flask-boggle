@@ -18,7 +18,7 @@ def show_board():
     if 'high_score' not in session:
         session['high_score'] = 0
     
-    return render_template('board.html', board=board, high_score=session['high_score'])
+    return render_template('board.html', board=board, high_score=session['high_score'], times_played=session['times_played'])
 
 @app.route('/check-word', methods=['POST'])
 def check_word():

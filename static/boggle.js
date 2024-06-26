@@ -10,11 +10,11 @@ $guessForm.on('submit', async function(e){
     const userGuess = $('#user-guess').val();
     
     // if user submits form without entering, any input, display message and return
-    // show message to user based on response received from server 
+   
     let $msg = $('.msg');
     if (userGuess == ''){
-        $msg.replaceWith ('<p id ="empty-msg" class="msg"> Invalid. Please enter a word. </p>');
-        $msg = $('.msg');
+        $msg.text("Invalid - Empty input. Please enter a word.");
+        $msg.attr('id', 'empty-msg');
         return;
     }
 
@@ -26,17 +26,18 @@ $guessForm.on('submit', async function(e){
 
     result = response.data['result'];
 
+    // show message to user based on response received from server, keep score if word is valid
     if(result == 'ok'){
-        $msg.replaceWith ('<p id="ok-msg" class ="msg"> Great! </p>');
-        $msg = $('.msg');
+        $msg.text("Nice work!.");
+        $msg.attr('id', 'ok-msg');
     }
     if(result == 'not-word'){
-        $msg.replaceWith ('<p id="not-word-msg" class ="msg">That is not a valid word. PLease try again.</p>');
-        $msg = $('.msg');
+        $msg.text("That is not a valid word. Please try again.");
+        $msg.attr('id', 'not-word-msg');
     }
     if(result == 'not-on-board'){
-        $msg.replaceWith ('<p id="not-on-board-msg" class ="msg">That word is not on the board. Please try again.</p>');
-        $msg = $('.msg');
+        $msg.text("That word is not on the board. Please try again.");
+        $msg.attr('id', 'not-on-board-msg');
     }
 
 

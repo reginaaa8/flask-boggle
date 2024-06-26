@@ -1,4 +1,5 @@
 const $guessForm = $('#guess-form');
+let userScore = 0;
 
 $guessForm.on('submit', async function(e){
     // handle form submission
@@ -30,6 +31,10 @@ $guessForm.on('submit', async function(e){
     if(result == 'ok'){
         $msg.text("Nice work!.");
         $msg.attr('id', 'ok-msg');
+        // add to score if guess is valid 
+        let wordScore = userGuess.length;
+        userScore += wordScore;
+        $('#score').text(`Score: ${userScore}`);
     }
     if(result == 'not-word'){
         $msg.text("That is not a valid word. Please try again.");

@@ -2,6 +2,7 @@ const $guessForm = $('#guess-form');
 let userScore = 0;
 let $msg = $('.msg');
 const $submitBtn = $('#submit-btn');
+let words = [];
 
 $guessForm.on('submit', async function(e){
     // handle form submission
@@ -16,6 +17,15 @@ $guessForm.on('submit', async function(e){
     if (userGuess == ''){
         $msg.text("Invalid - Empty input. Please enter a word.");
         $msg.attr('id', 'empty-msg');
+        return;
+    }
+
+    // if user guesses a word that has already been guessed, display message and return 
+    if(words.includes(userGuess)){
+        $msg.text("You have already entered this word. Please enter another word.");
+        $msg.attr('id', 'already-guessed-msg');
+        // clear form input 
+        $('#user-guess').val('');
         return;
     }
 
@@ -35,6 +45,8 @@ $guessForm.on('submit', async function(e){
         let wordScore = userGuess.length;
         userScore += wordScore;
         $('#current-score').text(`Current Score: ${userScore}`);
+        // add to list of words already guessed
+        words.push(userGuess);
     }
     if(result == 'not-word'){
         $msg.text("That is not a valid word. Please try again.");

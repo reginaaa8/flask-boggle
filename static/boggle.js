@@ -1,5 +1,7 @@
 const $guessForm = $('#guess-form');
 let userScore = 0;
+let $msg = $('.msg');
+const $submitBtn = $('#submit-btn');
 
 $guessForm.on('submit', async function(e){
     // handle form submission
@@ -11,8 +13,6 @@ $guessForm.on('submit', async function(e){
     const userGuess = $('#user-guess').val();
     
     // if user submits form without entering, any input, display message and return
-   
-    let $msg = $('.msg');
     if (userGuess == ''){
         $msg.text("Invalid - Empty input. Please enter a word.");
         $msg.attr('id', 'empty-msg');
@@ -48,6 +48,13 @@ $guessForm.on('submit', async function(e){
 
     // clear input text box after form submitted
     $('#user-guess').val('');
-
 });
+
+// end game after 60 seconds 
+setTimeout(function endGame(){
+    // disable submit button 
+    $submitBtn.attr('disabled', true);
+    $msg.text("GAME OVER");
+    $msg.attr('id', 'game-over-msg');
+}, 60000);
 

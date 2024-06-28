@@ -70,10 +70,16 @@ setTimeout(async function endGame(){
     $msg.attr('id', 'game-over-msg');
     
     // send user score to back end 
-   await axios({
+    const response = await axios({
         method: 'post',
         url: '/update-stats',
         data: {userScore: userScore}
     });
+    // show high score 
+    highScore = response.data['high_score'];
+    $('#high-score').text(`High Score: ${highScore}`);
+    // show number of times user has played 
+    timesPlayed = response.data['times_played'];
+    $('#num-plays').text(`Number of plays: ${timesPlayed}`);
 }, 60000);
 

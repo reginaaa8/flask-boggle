@@ -90,7 +90,7 @@ class BoggleGame{
         // show number of times user has played 
         const timesPlayed = response.data['times_played'];
         $('#num-plays').text(`Number of plays: ${timesPlayed}`);
-    }, 10000);
+    }, 60000);
     }
 
 }

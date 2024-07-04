@@ -13,6 +13,7 @@ body {
 h1 {
     font-size: 4rem;
     margin: 0.5rem;
+    text-shadow: 2px 2px grey;
 }
 
 #game-board {
@@ -25,10 +26,12 @@ table {
     width: 50%;
     font-size: 3rem;
     border: 1px solid black;
+    box-shadow: 2px 2px 0px grey;
 }
 
 tr, td{
     border: 1px, solid, black;
+    border-radius: 10%;
 }
 
 form {
@@ -47,4 +50,14 @@ button {
 #num-plays {
     height: 1rem;
     padding: 0.5rem;
+}
+
+#game-over-msg,
+#empty-msg,
+#not-word-msg {
+    color: red;
+}
+
+#ok-msg {
+    color: green;
 }

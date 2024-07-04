@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     text-align: center;
     font-family: 'Archivo Black';
+    background-color: lightgray;
 }
 
 h1 {

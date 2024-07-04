@@ -26,12 +26,16 @@ table {
     width: 50%;
     font-size: 3rem;
     border: 1px solid black;
-    box-shadow: 2px 2px 0px grey;
 }
 
 tr, td{
     border: 1px, solid, black;
     border-radius: 10%;
+}
+
+td {
+    box-shadow: 1px 1px grey;
+    text-shadow: 1px 1px grey;
 }
 
 form {

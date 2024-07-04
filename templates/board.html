@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boggle</title>
+    <link rel="stylesheet" href="/static/boggle.css">
 </head>
 <body>
     <h1>Boggle</h1>
+    <div id="game-board">
     <table>
         {% for row in board %}
         <!-- make rows -->
@@ -18,6 +20,8 @@
         </tr>
         {% endfor %}
     </table>
+    </div>
+
 
     <form id="guess-form" name="guess-form" action="">
         <label for="user-guess">Guess a word: </label>
@@ -33,8 +37,6 @@
 
     <div id="num-plays">Number of plays: {{times_played}}</div>
 
-
-    <div></div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

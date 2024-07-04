@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Archivo Black';
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0.5rem;
+}
+
+#game-board {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+table {
+    width: 50%;
+    font-size: 3rem;
+    border: 1px solid black;
+}
+
+tr, td{
+    border: 1px, solid, black;
+}
+
+form {
+    padding: 1rem;
+}
+
+input, 
+button {
+    padding: 0.5rem;
+    border: none;
+}
+
+.msg, 
+#current-score, 
+#high-score,
+#num-plays {
+    height: 1rem;
+    padding: 0.5rem;
+}
